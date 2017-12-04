@@ -18,7 +18,7 @@ If you use this code, please cite our paper:
 ### Install dependencies
 
 * This code has been tested on Python 3.5.
-* Install PyTorch, torchvision, torchnet, and tqdm.
+* Install [PyTorch](http://pytorch.org/), torchvision, torchnet, and tqdm.
 * Install the protonets package by running `python setup.py install` or `python setup.py develop`.
 
 ### Set up the Omniglot dataset
