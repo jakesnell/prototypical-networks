@@ -4,7 +4,6 @@ from functools import partial
 from tqdm import tqdm
 
 import numpy as np
-import scipy.misc
 
 import torch
 import torch.optim as optim
