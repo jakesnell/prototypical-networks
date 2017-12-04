@@ -35,4 +35,4 @@ If you use this code, please cite our paper:
 
 ### Evaluate
 
-* Run `python scripts/predict/few_shot/run_eval.py`.
+* Run evaluation as: `python scripts/predict/few_shot/run_eval.py --model.model_path results/trainval/best_model.t7`.
