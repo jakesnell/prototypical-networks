@@ -25,7 +25,7 @@ If you use this code, please cite our paper:
 ### Set up the Omniglot dataset
 
 * Download [images_background.zip](https://github.com/brendenlake/omniglot/blob/master/python/images_background.zip?raw=true) and [images_evaluation.zip](https://github.com/brendenlake/omniglot/blob/master/python/images_evaluation.zip?raw=true).
-* Extract both into `data/omniglot/data`
+* Extract both into `data/omniglot/data`.
 
 ### Train the model
 
