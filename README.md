@@ -19,7 +19,7 @@ If you use this code, please cite our paper:
 
 * This code has been tested on Python 3.5. If you're using [conda](https://conda.io/docs/), you can create a Python 3.5 environment by running `conda create -n protonets python=3.5` and then activate it by running `source activate protonets`.
 * Install [PyTorch and torchvision](http://pytorch.org/).
-* Install torchnet and tqdm.
+* Install [torchnet](https://github.com/pytorch/tnt) by running `pip install git+https://github.com/pytorch/tnt.git@master`.
 * Install the protonets package by running `python setup.py install` or `python setup.py develop`.
 
 ### Set up the Omniglot dataset
