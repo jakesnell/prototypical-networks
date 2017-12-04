@@ -17,15 +17,15 @@ If you use this code, please cite our paper:
 
 ### Install dependencies
 
-* This code has been tested on Python 3.5.
-* Install [PyTorch and torchvision](http://pytorch.org/)
+* This code has been tested on Python 3.5. If you're using [conda](https://conda.io/docs/), you can create a Python 3.5 environment by running `conda create -n protonets python=3.5` and then activate it by running `source activate protonets`.
+* Install [PyTorch and torchvision](http://pytorch.org/).
 * Install torchnet and tqdm.
 * Install the protonets package by running `python setup.py install` or `python setup.py develop`.
 
 ### Set up the Omniglot dataset
 
 * Download [images_background.zip](https://github.com/brendenlake/omniglot/blob/master/python/images_background.zip?raw=true) and [images_evaluation.zip](https://github.com/brendenlake/omniglot/blob/master/python/images_evaluation.zip?raw=true).
-* Extract both into `data/omniglot/data`
+* Extract both into `data/omniglot/data`.
 
 ### Train the model
 
