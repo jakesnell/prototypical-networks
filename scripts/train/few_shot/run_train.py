@@ -48,7 +48,7 @@ parser.add_argument('--train.epochs', type=int, default=10000, metavar='NEPOCHS'
 parser.add_argument('--train.optim_method', type=str, default='Adam', metavar='OPTIM',
                     help='optimization method (default: Adam)')
 parser.add_argument('--train.learning_rate', type=float, default=0.001, metavar='LR',
-                    help='learning rate (default: 0.0001)')
+                    help='learning rate (default: 0.001)')
 parser.add_argument('--train.decay_every', type=int, default=20, metavar='LRDECAY',
                     help='number of epochs after which to decay the learning rate')
 default_weight_decay = 0.0
