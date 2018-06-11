@@ -47,7 +47,7 @@ class Protonet(nn.Module):
 
         dists = euclidean_dist(zq, z_proto)
 
-        log_p_y = F.log_softmax(-dists).view(n_class, n_query, -1)
+        log_p_y = F.log_softmax(-dists, dim=1).view(n_class, n_query, -1)
 
         loss_val = -log_p_y.gather(2, target_inds).squeeze().view(-1).mean()
 
@@ -55,8 +55,8 @@ class Protonet(nn.Module):
         acc_val = torch.eq(y_hat, target_inds.squeeze()).float().mean()
 
         return loss_val, {
-            'loss': loss_val.data[0],
-            'acc': acc_val.data[0]
+            'loss': loss_val.item(),
+            'acc': acc_val.item()
         }
 
 @register_model('protonet_conv')
