@@ -40,7 +40,11 @@ def load_class_images(d):
         alphabet, character, rot = d['class'].split('/')
         image_dir = os.path.join(OMNIGLOT_DATA_DIR, 'data', alphabet, character)
 
-        image_ds = TransformDataset(ListDataset(sorted(glob.glob(os.path.join(image_dir, '*.png')))),
+        class_images = sorted(glob.glob(os.path.join(image_dir, '*.png')))
+        if len(class_images) == 0:
+            raise Exception("No images found for omniglot class {} at {}. Did you run download_omniglot.sh first?".format(d['class'], image_dir))
+
+        image_ds = TransformDataset(ListDataset(class_images),
                                     compose([partial(convert_dict, 'file_name'),
                                              partial(load_image_path, 'file_name', 'data'),
                                              partial(rotate_image, 'data', float(rot[3:])),
