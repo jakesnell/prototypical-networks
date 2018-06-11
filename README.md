@@ -17,7 +17,7 @@ If you use this code, please cite our paper:
 
 ### Install dependencies
 
-* This code has been tested on Ubuntu 16.04 with Python 3.6 and PyTorch 0.4. If you're using [conda](https://conda.io/docs/), you can create a Python environment by running `conda create -n protonets python=2.7` or `conda create -n protonets python=3.5` and then activate it by running `source activate protonets`.
+* This code has been tested on Ubuntu 16.04 with Python 3.6 and PyTorch 0.4.
 * Install [PyTorch and torchvision](http://pytorch.org/).
 * Install [torchnet](https://github.com/pytorch/tnt) by running `pip install git+https://github.com/pytorch/tnt.git@master`.
 * Install the protonets package by running `python setup.py install` or `python setup.py develop`.
@@ -35,4 +35,4 @@ If you use this code, please cite our paper:
 
 ### Evaluate
 
-* Run evaluation as: `python scripts/predict/few_shot/run_eval.py --model.model_path results/trainval/best_model.t7`.
+* Run evaluation as: `python scripts/predict/few_shot/run_eval.py --model.model_path results/trainval/best_model.pt`.
