@@ -101,7 +101,7 @@ def main(opt):
                 print("==> best model (loss = {:0.6f}), saving model...".format(hook_state['best_loss']))
 
                 state['model'].cpu()
-                torch.save(state['model'], os.path.join(opt['log.exp_dir'], 'best_model.t7'))
+                torch.save(state['model'], os.path.join(opt['log.exp_dir'], 'best_model.pt'))
                 if opt['data.cuda']:
                     state['model'].cuda()
 
@@ -114,7 +114,7 @@ def main(opt):
                     state['stop'] = True
         else:
             state['model'].cpu()
-            torch.save(state['model'], os.path.join(opt['log.exp_dir'], 'best_model.t7'))
+            torch.save(state['model'], os.path.join(opt['log.exp_dir'], 'best_model.pt'))
             if opt['data.cuda']:
                 state['model'].cuda()
 

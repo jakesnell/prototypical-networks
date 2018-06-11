@@ -4,7 +4,7 @@ from eval import main
 
 parser = argparse.ArgumentParser(description='Evaluate few-shot prototypical networks')
 
-default_model_path = 'results/best_model.t7'
+default_model_path = 'results/best_model.pt'
 parser.add_argument('--model.model_path', type=str, default=default_model_path, metavar='MODELPATH',
                     help="location of pretrained model to evaluate (default: {:s})".format(default_model_path))
 
