@@ -29,7 +29,7 @@ If you use this code, please cite our paper:
 ### Train the model
 
 * Run `python scripts/train/few_shot/run_train.py`. This will run training and place the results into `results`.
-  * You can specify a different output directory by passing in the option `--log.exp_dir EXP_DIR`, where `EXPD_DIR` is your desired output directory.
+  * You can specify a different output directory by passing in the option `--log.exp_dir EXP_DIR`, where `EXP_DIR` is your desired output directory.
   * If you are running on a GPU you can pass in the option `--data.cuda`.
 * Re-run in trainval mode `python scripts/train/few_shot/run_trainval.py`. This will save your model into `results/trainval` by default.
 
