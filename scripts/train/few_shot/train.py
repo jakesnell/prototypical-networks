@@ -11,6 +11,8 @@ import torch.optim.lr_scheduler as lr_scheduler
 import torchvision
 import torchnet as tnt
 
+from torch.utils.tensorboard import SummaryWriter
+
 from protonets.engine import Engine
 
 import protonets.utils.data as data_utils
@@ -57,6 +59,8 @@ def main(opt):
     if val_loader is not None:
         meters['val'] = { field: tnt.meter.AverageValueMeter() for field in opt['log.fields'] }
 
+    tensorboard = SummaryWriter()
+
     def on_start(state):
         if os.path.isfile(trace_file):
             os.remove(trace_file)
@@ -95,6 +99,12 @@ def main(opt):
             json.dump(meter_vals, f)
             f.write('\n')
 
+        tensorboard.add_scalar("Value Loss", meter_vals['val']['loss'], state['epoch'])
+        tensorboard.add_scalar("Value Accuracy", meter_vals['val']['acc'], state['epoch'])
+        tensorboard.add_scalar("Train Loss", meter_vals['train']['loss'], state['epoch'])
+        tensorboard.add_scalar("Train Accuracy", meter_vals['train']['acc'], state['epoch'])
+        tensorboard.add_scalar("Best Loss", hook_state['best_loss'], state['epoch'])
+
         if val_loader is not None:
             if meter_vals['val']['loss'] < hook_state['best_loss']:
                 hook_state['best_loss'] = meter_vals['val']['loss']
@@ -128,3 +138,5 @@ def main(opt):
                          'weight_decay': opt['train.weight_decay'] },
         max_epoch = opt['train.epochs']
     )
+
+    tensorboard.close()

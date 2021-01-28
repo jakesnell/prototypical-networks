@@ -6,3 +6,4 @@ data/*/data
 dist
 build
 *.zip
+env
